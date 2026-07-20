@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.espressosys.com/network/developer/espresso-api
+docs: https://docs.espressosys.com/network/developer/espresso-api
+summary:
+  types: [none]
+  api_key_in: []
+  oauth2_flows: []
+  note: >-
+    The Espresso Network query service and node REST/WebSocket API is a public,
+    permissionless read + submit surface. Read modules (availability, node,
+    status, catchup, state, explorer, events) require no authentication, API
+    key, or token. Transaction submission (submit module) is likewise
+    permissionless — transactions enter the public mempool and are authorized
+    cryptographically at the protocol layer (signatures over the transaction),
+    not via an HTTP auth scheme. Access control for operating infrastructure
+    (validators, builders) is handled by onchain staking / registration, not API
+    credentials.
+schemes: []
