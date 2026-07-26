@@ -1,8 +1,19 @@
 aid: espresso
 name: Espresso
-description: Espresso is a company surfaced as a portfolio company of a16z, electric-capital, greylock
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+description: >-
+  Espresso Systems builds the Espresso Network, a high-performance consensus and
+  sequencing layer that gives rollups and institution-grade financial
+  applications real-time settlement (~3 second finality) without sacrificing
+  control, privacy, or connectivity to global onchain liquidity. The network is
+  a permissionless delegated-proof-of-stake system (Mainnet 1.0, live) built on
+  the HotShot BFT consensus protocol and the Tiramisu data-availability layer,
+  confirming transactions for integrated Arbitrum Nitro/Orbit and OP Stack
+  chains. Espresso nodes and query services expose a public, no-auth REST + WebSocket
+  API (built on the Tide Disco framework) across modules for availability, node
+  state, consensus status, catchup, explorer, events streaming, and transaction
+  submission. The API is served on both the Ethereum-mainnet-anchored Mainnet and
+  the Sepolia-anchored Decaf testnet, with content negotiation between JSON and
+  binary and URL-path major versioning (v0 → v1).
 url: https://raw.githubusercontent.com/api-evangelist/espresso/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,12 +23,66 @@ x-backed-by:
 - greylock
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://www.espressosys.com/
 tags:
 - Company
-apis: []
+- Blockchain
+- Web3
+- Infrastructure
+- Consensus
+- Sequencer
+- Rollup
+- Data Availability
+- Ethereum
+- DeFi
+- REST API
+- Cryptography
+apis:
+- name: Espresso Network Query Service API
+  description: >-
+    The public REST and WebSocket API served by Espresso query services and
+    nodes (Tide Disco framework). Comprises independent modules — availability
+    (Tiramisu DA blocks/headers/payloads/VID), node, status, catchup, state,
+    explorer, hotshot-events streaming, and submit (post transactions to the
+    public mempool) — each versioned via URL path (v0/v1) and negotiating JSON
+    or binary via Content-Type/Accept. Read endpoints are unauthenticated; there
+    is no "latest block" query — clients index by block height or hash.
+  humanURL: https://docs.espressosys.com/network/developer/espresso-api
+  baseURL: https://query.main.net.espresso.network/v1
+  tags:
+  - Blockchain
+  - Consensus
+  - Data Availability
+  - Query
+  - REST
+  properties:
+  - type: Documentation
+    url: https://docs.espressosys.com/network/developer/espresso-api
+  - type: APIReference
+    url: https://docs.espressosys.com/network/developer/espresso-api
+  - type: LLMsTxt
+    url: llms/espresso-llms.txt
+  - type: Authentication
+    url: authentication/espresso-authentication.yml
+  - type: Conventions
+    url: conventions/espresso-conventions.yml
+  - type: Webhooks
+    url: asyncapi/espresso-events-webhooks.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +91,42 @@ maintainers:
 common:
 - type: Website
   url: https://www.espressosys.com/
+- type: DeveloperPortal
+  url: https://docs.espressosys.com/
+- type: Documentation
+  url: https://docs.espressosys.com/network/developer/espresso-api
+- type: APIReference
+  url: https://docs.espressosys.com/network/developer/espresso-api
+- type: GettingStarted
+  url: https://docs.espressosys.com/network/learn/quickstart
+- type: GitHubOrganization
+  url: https://github.com/EspressoSystems
+- type: Blog
+  url: https://medium.com/@espressosys
+- type: ChangeLog
+  url: https://docs.espressosys.com/network/network/changelog
+- type: PrivacyPolicy
+  url: https://www.espressosys.com/privacy-policy
+- type: Support
+  url: https://discord.com/invite/DRfcHRnnBz
+- type: LLMsTxt
+  url: llms/espresso-llms.txt
+- type: Authentication
+  url: authentication/espresso-authentication.yml
+- type: Conventions
+  url: conventions/espresso-conventions.yml
+- type: ChangeLog
+  url: changelog/espresso-changelog.yml
+- type: Lifecycle
+  url: lifecycle/espresso-lifecycle.yml
+- type: Conformance
+  url: conformance/espresso-conformance.yml
+- type: DomainSecurity
+  url: security/espresso-domain-security.yml
+- type: Webhooks
+  url: asyncapi/espresso-events-webhooks.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

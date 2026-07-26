@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.espressosys.com/network/developer/espresso-api
+versioning:
+  scheme: uri-path
+  current: v1
+  earlier: [v0]
+  docs: https://docs.espressosys.com/network/developer/espresso-api
+  detail: >-
+    API modules are served under major-version path prefixes (/v0/, /v1/).
+    Multiple major versions run simultaneously; v1 is current and v0 is retained
+    under "Earlier Versions" documentation. The v0 -> v1 transition landed with
+    the April 2025 Mainnet testnet release.
+deprecation:
+  policy_url: https://docs.espressosys.com/network/developer/espresso-api/earlier-versions
+  sunset_header: false
+  detail: >-
+    No formal RFC 8594 Sunset/Deprecation-header policy is published. Superseded
+    major versions (v0) are kept available and documented as "Earlier Versions"
+    rather than being hard-deprecated; the major-version prefix is the
+    compatibility boundary.
+networks:
+  - name: Mainnet
+    query_service: https://query.main.net.espresso.network/v1
+    explorer: https://explorer.main.net.espresso.network
+    l1: Ethereum mainnet
+    status: live
+  - name: Decaf Testnet
+    query_service: https://query.decaf.testnet.espresso.network/v1
+    explorer: https://explorer.decaf.testnet.espresso.network
+    l1: Ethereum Sepolia
+    status: live
+sla:
+  url: null
+  uptime_target: null
+  note: No published SLA / uptime commitment (permissionless network).
+status_page: null
+status_page_note: >-
+  No dedicated uptime status page found; live network health is observable via
+  the block explorers listed under networks[].
+changelog: changelog/espresso-changelog.yml

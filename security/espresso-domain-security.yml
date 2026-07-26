@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.espressosys.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 20 14:31:50 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: docs.espressosys.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 31 09:14:01 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: query.main.net.espresso.network
+  https: true
+  tls_version: TLSv1.2
+  cert_expires: Sep 29 23:59:59 2026 GMT
+  hsts: false
+domains:
+- domain: espressosys.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+- domain: espresso.network
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false

@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.espressosys.com/network/developer/espresso-api
+docs: https://docs.espressosys.com/network/developer/espresso-api
+summary: >-
+  Cross-cutting request/response semantics for the Espresso Network query
+  service and node API (served on the Tide Disco framework). Public, no-auth REST
+  + WebSocket. Content negotiation between JSON and binary; URL-path major
+  versioning; height/hash-addressed resources with explicit range pagination.
+authentication:
+  style: none
+  detail: Public read + permissionless submit; no API key or token. See authentication/espresso-authentication.yml
+content_negotiation:
+  request_formats: [application/json, application/octet-stream]
+  response_formats: [application/json, application/octet-stream]
+  mechanism: Standard HTTP Content-Type (request) and Accept (response) headers select JSON or binary.
+versioning:
+  style: uri-path
+  detail: >-
+    Each API module is exposed under a major-version path prefix (e.g. /v0/, /v1/).
+    Multiple major versions are served simultaneously; v1 is current, v0 retained
+    as "earlier versions". Minor/patch changes are backward compatible within a major.
+  current: v1
+  base_example: https://query.main.net.espresso.network/v1
+pagination:
+  style: height-or-hash-addressed-ranges
+  detail: >-
+    Endpoints require an explicit point in the chain (block height or hash) —
+    there is no "latest block" query. Range endpoints take :from (inclusive) and
+    :until (exclusive) bounds. Range sizes are capped; GET /availability/limits
+    returns small_object_range_limit and large_object_range_limit.
+  params: [":height", ":hash", ":from", ":until", ":namespace", ":index"]
+streaming:
+  detail: >-
+    WebSocket upgrade endpoints stream blocks, leaves, headers and HotShot
+    consensus events from a starting height (e.g. /availability/stream/blocks/:height,
+    hotshot-events module). See asyncapi/espresso-events-webhooks.yml.
+idempotency:
+  supported: false
+  detail: >-
+    No idempotency-key header is documented. Read endpoints are naturally
+    idempotent (deterministic by height/hash); transaction submission is not
+    HTTP-idempotent but transactions are deduplicated at the consensus/mempool
+    layer by their content hash.
+error_envelope:
+  format: tide-disco
+  detail: >-
+    Errors are returned by the Tide Disco framework as an HTTP status plus a JSON
+    body describing the error. Not RFC 9457 problem+json. See errors handling in
+    the per-module API reference.
+rate_limiting:
+  detail: >-
+    No published per-key rate-limit headers (the API is keyless). Range queries
+    are bounded by the server-advertised range limits rather than request-rate quotas.
+related:
+  authentication: authentication/espresso-authentication.yml
+  lifecycle: lifecycle/espresso-lifecycle.yml
+  changelog: changelog/espresso-changelog.yml
+  events: asyncapi/espresso-events-webhooks.yml

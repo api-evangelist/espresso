@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.espressosys.com/network/network/changelog
+docs: https://docs.espressosys.com/network/network/changelog
+scheme: named-network-releases
+detail: >-
+  Espresso publishes a reverse-chronological history of network releases, each a
+  named milestone (mainnet phases and coffee-themed testnets) rather than semver.
+  The REST API's major version is tied to these releases (API moved v0 -> v1 with
+  the Mainnet testnet release, April 2025).
+current_version: Mainnet 1.0 (Proof of Stake)
+current_api_version: v1
+entries:
+- release: Proof of Stake (Mainnet)
+  date: '2026-03'
+  type: addition
+  highlights: Activated permissionless validator participation via delegated proof-of-stake.
+- release: Mainnet (testnet release)
+  date: '2025-04'
+  type: breaking
+  highlights: >-
+    Permissionless validator set; new stake and ESP token contracts; REST API
+    moved from v0 to v1.
+- release: Mainnet 0
+  date: '2024-10'
+  type: release
+  highlights: First production deployment — 20 operators, 100 nodes, 1 MB initial block size.
+- release: Decaf Testnet
+  date: '2024-09'
+  type: addition
+  highlights: Persistent testnet launched alongside Mainnet; expanded to 24 operators / 100 distributed nodes.
+- release: Cappuccino Testnet
+  date: '2024-05'
+  type: addition
+  highlights: 10 operators onboarded; VID support added to the DA layer; Arbitrum Nitro fraud-proof support enabled.
+- release: Gibraltar Testnet
+  date: '2024-01'
+  type: addition
+  highlights: First integration with Arbitrum Nitro; VID implementation progress; external operator collaboration.
+- release: Cortado Testnet
+  date: '2023-09'
+  type: addition
+  highlights: First integration with the OP Stack; public testnet with dual-stack chains.
+- release: Doppio Testnet
+  date: '2023-07'
+  type: addition
+  highlights: Second testnet with a minimal chain example and Polygon zkEVM stack integrations.

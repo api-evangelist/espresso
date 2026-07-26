@@ -1,0 +1,43 @@
+generated: '2026-07-19'
+method: derived
+source: https://docs.espressosys.com/network/developer/espresso-api
+note: >-
+  Cross-cutting standards posture derived from the published API reference and
+  live probes of the query service. Espresso is a keyless blockchain query/DA
+  API; most identity/finance interop standards do not apply and are recorded as
+  conforms:false for honesty rather than omitted.
+standards:
+- id: http-content-negotiation
+  conforms: true
+  evidence: Content-Type/Accept negotiation between application/json and application/octet-stream (docs).
+- id: uri-path-versioning
+  conforms: true
+  evidence: Major versions served under /v0//v1/ path prefixes (docs + live root module listing).
+- id: websocket-streaming
+  conforms: true
+  evidence: hotshot-events and availability/stream/* WebSocket subscription endpoints (docs).
+- id: oauth2
+  conforms: false
+  evidence: Public keyless API; no OAuth2 security scheme.
+- id: openid-connect
+  conforms: false
+  evidence: No /.well-known/openid-configuration (probed 404).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors returned as Tide Disco JSON error bodies, not application/problem+json.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: No /.well-known/security.txt on website or query host (probed 404).
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No published Sunset/Deprecation header policy; earlier versions retained instead.
+- id: fhir
+  conforms: false
+- id: fapi
+  conforms: false
+- id: scim
+  conforms: false
+- id: odata
+  conforms: false
+- id: json-api
+  conforms: false

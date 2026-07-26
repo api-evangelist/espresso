@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.espressosys.com/network/developer/espresso-api/events-api
+docs:
+  events_api: https://docs.espressosys.com/network/developer/espresso-api/events-api
+  availability_streams: https://docs.espressosys.com/network/developer/espresso-api/availability-api
+spec_type: Webhooks
+surface: websocket-streaming
+note: >-
+  Espresso does not publish an AsyncAPI document and does not offer HTTP push
+  webhooks. Its event surface is real but delivered over WebSocket subscription
+  streams served by nodes/query services (Tide Disco). Clients follow consensus
+  by opening a stream from a starting block height and receiving verifiable
+  events/objects in order. Captured here as an event surface (type: Webhooks) —
+  no AsyncAPI spec is fabricated.
+channels:
+- name: hotshot-events
+  module: hotshot-events
+  transport: websocket
+  description: >-
+    Streams events produced by the HotShot consensus protocol, allowing a client
+    to follow along with consensus in a trustless manner by streaming and
+    verifying events.
+  reference: https://docs.espressosys.com/network/developer/espresso-api/events-api
+- name: availability/stream/blocks/:height
+  module: availability
+  transport: websocket
+  description: Streams committed blocks in order starting from a given block height.
+- name: availability/stream/leaves/:height
+  module: availability
+  transport: websocket
+  description: Streams HotShot leaves (block metadata) starting from a given block height.
+- name: availability/stream/headers/:height
+  module: availability
+  transport: websocket
+  description: Streams block headers starting from a given block height.
+delivery:
+  model: pull-subscription (client opens WebSocket, replays from a height)
+  ordering: by block height
+  verification: events are self-verifiable against consensus (trustless follow)
