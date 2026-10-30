@@ -64,6 +64,98 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Espresso is a company surfaced as a portfolio company of a16z, electric-capital, greylock and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Espresso Systems builds the Espresso Network, a high-performance consensus and sequencing layer that gives rollups and institution-grade financial applications real-time settlement (~3 second finality) without sacrificing control, privacy, or connectivity to global onchain liquidity. The network is a permissionless delegated-proof-of-stake system (Mainnet 1.0, live) built on the HotShot BFT consensus protocol and the Tiramisu data-availability layer, confirming transactions for integrated Arbitrum Nitro/Orbit and OP Stack chains. Espresso nodes and query services expose a public, no-auth REST + WebSocket API (built on the Tide Disco framework) across modules for availability, node state, consensus status, catchup, explorer, events streaming, and transaction submission. The API is served on both the Ethereum-mainnet-anchored Mainnet and the Sepolia-anchored Decaf testnet, with content negotiation between JSON and binary and URL-path major versioning (v0 → v1).
 
-Backed by: a16z, electric-capital, greylock — https://www.espressosys.com/
+**Areas:** Company · Blockchain · Web3 · Infrastructure · Consensus · Sequencer · Rollup · Data Availability · Ethereum · DeFi · REST API · Cryptography
+
+## Espresso on APIs.io
+
+Everything profiled for Espresso is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/espresso/](https://apis.io/providers/espresso/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Espresso Network Query Service API](https://apis.io/apis/espresso/espresso-network-query-service-api/) — The public REST and WebSocket API served by Espresso query services and nodes (Tide Disco framework). Comprises independent modules — availability (Tiramisu…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Espresso Events Webhooks](https://apis.io/asyncapis/espresso/espresso-events-webhooks/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Espresso Authentication](https://apis.io/security/espresso/espresso-authentication/)
+- [Espresso Domain Security](https://apis.io/security/espresso/espresso-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.espressosys.com/)
+- [Documentation](https://docs.espressosys.com/network/developer/espresso-api)
+- [Getting started](https://docs.espressosys.com/network/learn/quickstart)
+- [API reference](https://docs.espressosys.com/network/developer/espresso-api)
+- [Support](https://discord.com/invite/DRfcHRnnBz)
+- [Changelog](https://docs.espressosys.com/network/network/changelog)
+- [Blog](https://medium.com/@espressosys)
+- [Privacy policy](https://www.espressosys.com/privacy-policy)
+- [GitHub](https://github.com/EspressoSystems)
+
+## API Evangelist rating
+
+**Kin Score 35.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 57.1 |
+| Access clarity | 10.5 |
+
+**Agent readiness 19.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/espresso/](https://apis.io/providers/espresso/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Espresso: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/espresso/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
